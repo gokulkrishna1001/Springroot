@@ -49,4 +49,25 @@ public class IPLController {
 		iser.deleteInfo(playerId);
 		return "Player Id "+playerId+" is deleted";
 	}	
+	@GetMapping("/sortdesc/{name}")
+	public List<IPLModel>sortD(@PathVariable("name")String name)
+	{
+		return iser.sortDesc(name);
+	}
+	@GetMapping("/sortasc/{name}")
+	public List<IPLModel>sortA(@PathVariable("name")String name)
+	{
+		return iser.sortAsc(name);
+	}
+	@GetMapping("/pagination/{pnum}/{psize}")
+	public List<IPLModel> pagination(@PathVariable("pnum")int num,@PathVariable("psize")int size)
+	{
+		return iser.pagination(num,size);
+	}
+	 
+	@GetMapping("/paginationsorting/{pnum}/{psize}/{name}")
+	public List<IPLModel> pagesorting(@PathVariable("pnum")int num,@PathVariable("psize")int size,@PathVariable("name")String name)
+	{
+		return iser.pagesorting(num,size,name);
+	}
 }

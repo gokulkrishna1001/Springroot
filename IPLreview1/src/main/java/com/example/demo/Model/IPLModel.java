@@ -10,7 +10,7 @@ public class IPLModel {
 
 	@Id
 	private int playerId;
-	private String playerName;
+	private String playerName; 
 	private String playerCountry;
 	private int player_age;
 	private int Jersey_no;
